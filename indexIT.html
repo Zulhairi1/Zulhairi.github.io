@@ -1,0 +1,61 @@
+
+<html>
+    <head>
+        <link rel="icon" type="image/x-icon" href="img/JataNegara.png" />
+        <link type="text/css" rel="stylesheet" href="css/login.css">
+    </head>
+    <body>
+        <div class="logo">
+
+        </div>
+        <form action="indexIT2.html" method="POST" class="login-form">
+            <div class="box bg-img">
+                <div class="content">
+                    <img src="img/JataNegara.png" alt="JPA" width="120" height="100"></img>
+                    <br><br>
+                    <h3>Sistem Mengurusan Aset</h3><br>
+
+                  
+                        <div class="forms">
+                                                <div class="user-input">
+                            <input name="ic" type="text" class="login-input" placeholder="No. MyKad" id="name" required/>
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="pass-input">
+                            <input name="katalaluan" type="password" class="login-input" placeholder="Kata Laluan" id="my-password" required/ >
+                            <span class="eye" onclick="myFunction()">
+                              <i id="hide-1" class="fas fa-eye-slash"></i>
+                              <i id="hide-2" class="fas fa-eye"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <a href="indexIT.html"> <button class="login-btn" type="submit" name="submit">Log Masuk</button></a>
+                    <p class="new-account">Bukan Pegguna? <a href="registration.html">Daftar Sekarang!</a></p>
+                    <br>
+
+                </div>
+            </div>
+        </form>
+        <script src="https://kit.fontawesome.com/c0078485ae.js" crossorigin="anonymous"></script>
+    </body>
+</html>
+
+<script>
+    function myFunction() {
+        var x = document.getElementById("my-password");
+        var y = document.getElementById("hide-1");
+        var z = document.getElementById("hide-2");
+
+        if (x.type === "password") {
+            x.type = "text";
+            y.style.display = "block";
+            z.style.display = "none";
+        } else {
+            x.type = "password";
+            y.style.display = "none";
+            z.style.display = "block";
+        }
+    }
+
+</script>

@@ -1,0 +1,196 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <link rel="icon" type="image/x-icon" href="img/JataNegara.png" />
+    <meta charset="UTF-8">
+    <title>Borang Pendaftaran Pegawai</title> 
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  
+    
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+     <link rel="stylesheet" href="includes/sweetalert2/sweetalert2.css">
+    <script src="includes/sweetalert2/sweetalert2.min.js"></script>
+  
+ 
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="style4.css">
+    <link rel="stylesheet" href="animate.css">
+</head>
+
+ <link rel="icon" type="image/x-icon" href="img/JataNegara.png" />
+<body>  
+  <br>
+  
+  
+   <div class="container"> 
+     <div class="row">
+       
+        <div class="page-header">
+            <h1 style="text-align: center;">Borang Pendaftaran Pegawai</h1>
+            <?php echo $msg; ?>
+                              
+                  
+      
+      </div> 
+       <div class="col-md-3">
+         
+       </div>
+        <div class="col-md-6 animated bounceIn"> 
+          
+           
+            
+                <br>
+            <form class="form-horizontal" action="" method="post" enctype="multipart/form-data" >
+                
+                <div class="input-group">
+                  <span class="input-group-addon"><b>Nama</b></span>
+                  <input id="drname" type="text" class="form-control" onkeyup="this.value = this.value.toUpperCase();" name="nama" placeholder="Name">
+                </div>
+                <br> 
+                
+                 <div class="input-group">
+                  <span class="input-group-addon"><b>No Kad Pengenalan</b></span>
+                  <input id="drmobile" type="text" class="form-control" name="ic" placeholder="No Kad Pengenalan">
+                </div>
+                <br> 
+
+                <div class="input-group">
+                  <span class="input-group-addon"><b>Emel</b></span>
+                  <input id="drname" type="text" class="form-control" onkeyup="this.value = this.value.toUpperCase();" name="yu_address" placeholder="Alamat Emel">
+                  
+                  <input type="text" name="xu_address"  id="Address" value="@JPA.GOV.MY" hidden />
+                  <span class="input-group-addon"><b>@JPA.GOV.MY</b></span>
+
+                    <script type="">
+  
+                     function combine(form) {
+                      form.emel.value = form.yu_address.value + "" + form.xu_address.value;
+
+                          }
+                  </script>
+                  <input type="text" name="emel" hidden >
+                </div>
+                <br>
+                
+                
+                 <div class="input-group">
+                   <span class="input-group-addon"><b>Bahagian</b></span>
+                  <select name="bahagian" class="form-control" id="retailer:areaCode">
+                   <option class="input-group-addon" value="" disabled selected>--- Pilih Bahagian ---</option>
+                   <?php while($row_bahagian = mysqli_fetch_array($result_bahagian)) { ?>
+                     <option value="<?php echo $row_bahagian["bahagian_nama"]; ?>"><?php echo $row_bahagian["bahagian_nama"]." (".$row_bahagian["bahagian_singkatan"].")"; ?></option>
+                     <?php } ?>
+                     </select>
+                </div>
+                <br> 
+
+
+                 <div class="input-group">
+                  <span class="input-group-addon"><b>Sektor</b></span>
+                  <input id="drmobile" type="text" class="form-control" name="sektor" placeholder="Sektor">
+                </div>
+                <br> 
+                
+                <div class="input-group">
+                   <span class="input-group-addon"><b>Jawatan</b></span>
+                  <select name="jawatan" class="form-control" id="retailer:areaCode">
+                   <option class="input-group-addon" value="" disabled selected>--- Pilih Jawatan ---</option>
+                   <?php while($row_jawatan = mysqli_fetch_array($result_jawatan)) { ?>
+                     <option value="<?php echo $row_jawatan["Jawatan_Nama"]; ?>"><?php echo $row_jawatan["Jawatan_Nama"]." (".$row_jawatan["Jawatan_Singkatan"].")"; ?></option>
+                     <?php } ?>
+                     </select>
+                </div>
+                <br> 
+
+                <div class="input-group">
+                  <span class="input-group-addon"><b>Gred</b></span>
+                  <input id="drlicense" type="text" class="form-control" onkeyup="this.value = this.value.toUpperCase();" name="gred" placeholder="Gred">
+                </div>
+                <br>
+
+                <div class="input-group">
+                  <span class="input-group-addon"><b>No Telefon Pejabat</b></span>
+                     <input rows="5" id="draddress" type="text" class="form-control" name="noPej" placeholder="No Telefon Pejabat"> </input>
+                  
+                </div>
+                <br>
+                
+              <div class="input-group">
+                  <span class="input-group-addon"><b>No Telefon Bimbit</b></span>
+                     <input rows="5" id="draddress" type="text" class="form-control" name="noTel" placeholder="No Telefon Bimbit"> </input>
+                  
+                </div>
+                
+                
+                
+                <br>
+                
+                
+                 <div class="input-group">
+                  <span class="input-group-addon"><b>Gambar</b></span>
+                  <input  type="file" class="form-control" name="file"> 
+
+              </div>
+                
+                
+                 <br>
+
+                 <div class="input-group">
+                  <span class="input-group-addon"><b>Kata Laluan</b></span>
+                  <input id="password" type="password" class="form-control"  id="password" name="katalaluan" placeholder="Kata Laluan">
+                  <input type="password" class="form-control" placeholder="Ulang Kata Laluan" id="confirm_password" required>
+
+
+                  <script type="">
+                    var password = document.getElementById("password"), confirm_password = document.getElementById("confirm_password");
+
+                      function validatePassword(){
+                        if(password.value != confirm_password.value) {
+                          confirm_password.setCustomValidity("Passwords Don't Match");
+                        } else {
+                          confirm_password.setCustomValidity('');
+                        }
+                      }
+
+                      password.onchange = validatePassword;
+                      confirm_password.onkeyup = validatePassword;
+
+                  </script>
+                </div>
+
+                <br>
+                
+                <div class="input-group">
+                  <input type="submit" name="submit" onClick="combine(this.form);"class="btn btn-success">
+                  
+                </div>
+              </form>   
+        </div>  
+        <div class="col-md-3"></div>
+         
+     </div>
+         
+   
+    </div> 
+    
+   
+    
+</body>
+</html>
+<footer class="footer bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-16 text-center text-lg-start my-auto">
+                        <br><br><br><br><br>
+                        <p class="text-muted small mb-4 mb-lg-0">&copy; <script>document.write(new Date().getFullYear())</script>  Jabatan Perkhidmatan Awam Malaysia</p>
+
+                        <p>PENAFIAN: Bahagian Khidmat Pengurusan, JPA tidak akan bertanggungjawab bagi sebarang kehilangan dan kerugian yang disebabkan oleh penggunaan maklumat yang diperoleh dari laman ini.</p>
+                    </div>
+                    <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
+                        
+                    </div>
+                </div>
+            </div>
+        </footer>
